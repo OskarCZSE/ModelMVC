@@ -6,12 +6,10 @@ from tkinter import ttk
 # ====================================================================
 
 class KwadratModel:
-    """Model Danych: Przechowuje dane do obliczenia kwadratu."""
     def __init__(self):
         self._wynik = 0
 
     def oblicz(self, liczba):
-        """Oblicza kwadrat liczby."""
         self._wynik = liczba ** 2
 
     def get_wynik(self):
@@ -23,7 +21,6 @@ class KwadratModel:
 # ====================================================================
 
 class KalkulatorView(tk.Tk):
-    """Widok: Tworzy i wyświetla interfejs Tkinter."""
     def __init__(self, controller):
         super().__init__()
         self.title("Kalkulator kwadratów w Pythonie")
@@ -66,7 +63,7 @@ class KalkulatorController:
     def obsluz_oblicz(self):
         try:
             liczba = int(self.view.liczba_entry.get())
-            self.model.oblicz(liczba)  
+            self.model.oblicz(liczba)
             self.aktualizuj_view()
         except ValueError:
             self.view.ustaw_wynik("Błąd: Wprowadź liczbę całkowitą!")
